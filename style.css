@@ -1,0 +1,163 @@
+:root {
+  /* Primary colors */
+  --color-bg: #ffffff;            /* Page background */
+  --color-text-primary: #111111;  /* Main body text */
+  --color-text-secondary: #555555; /* Subheadings, subtitles, italic text */
+  --color-link: #0066cc;          /* Link color */
+  --color-link-hover: #004499;    /* Link hover color */
+  --color-header-bg: var(--color-bg); /* Header background (none in this design) */
+  --color-header-text: var(--color-text-primary);
+  --color-section-heading: #555555; /* Research heading color */
+}
+
+/* Base styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;   /* horizontal centering */
+  align-items: center;       /* vertical centering */
+  min-height: 100vh;
+  flex-wrap: wrap;      /* allow wrapping on small widths */
+  min-width: 0;         /* prevent content overflow */
+}
+
+main {
+  max-width: 700px;
+  width: 90vw;           /* allows main to shrink with viewport */
+  padding: 60px 20px;
+  margin: 0;
+  box-sizing: border-box; /* include padding inside width */
+  opacity: 1;
+}
+
+/* Typography and spacing */
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  color: var(--color-text-primary);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: var(--color-text-secondary);
+  opacity: 0;
+}
+
+.intro {
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  color: var(--color-text-primary);
+}
+
+.location {
+  margin-bottom: 3rem;
+  font-style: italic;
+  color: var(--color-text-secondary);
+  opacity: 0;
+}
+
+.research {
+  margin-bottom: 3rem;
+  opacity: 0;
+}
+
+.research h2 {
+  color: var(--color-section-heading);
+  margin-bottom: 1rem;
+}
+
+.research ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: var(--color-text-primary);
+}
+
+.research li {
+  margin-bottom: 0.5rem;
+}
+
+.research a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.research a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  opacity: 0;
+}
+
+.links a {
+  color: var(--color-link);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.links a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation-name: fadeInUp;
+  animation-fill-mode: forwards;
+  animation-duration: 600ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Responsiveness Adjustments */
+@media (max-width: 600px) {
+  html, body {
+    font-size: 16px;  /* Slightly smaller base font on mobile */
+  }
+
+  main {
+    padding: 40px 15px;
+    max-width: 90vw;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  /* Left-align research list items on mobile for readability */
+  .research ul {
+    padding-left: 20px;
+    list-style-position: outside;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 400px; /* keep list narrower for readability */
+  }
+
+  nav.links {
+    justify-content: center;
+  }
+}
