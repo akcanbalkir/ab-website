@@ -38,6 +38,14 @@ main {
 }
 
 /* Typography and spacing */
+.header-container {
+  display: flex;
+  align-items: center;  /* vertically center image with text */
+  justify-content: space-between; /* dynamic space */
+  width: 100%; /* ensure it fills the container */
+  margin-bottom: 2rem;
+}
+
 .title {
   font-size: 2.5rem;
   font-weight: bold;
@@ -48,13 +56,13 @@ main {
 
 .subtitle {
   font-size: 1.25rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   color: var(--color-text-secondary);
   opacity: 0;
 }
 
 .intro {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   opacity: 0;
   color: var(--color-text-primary);
 }
@@ -114,6 +122,15 @@ main {
   text-decoration: underline;
 }
 
+/* Profile picture styling */
+.profile-pic {
+  width: 6em;
+  height: 6em;
+  border-radius: 50%;       /* makes the image circular */
+  object-fit: cover;        /* crop to fit the circle */
+  box-shadow: 0 0 8px rgba(0,0,0,0.1); /* optional subtle shadow */
+}
+
 /* Animation */
 @keyframes fadeInUp {
   from {
@@ -159,5 +176,19 @@ main {
 
   nav.links {
     justify-content: center;
+  }
+
+   .header-container {
+    flex-direction: column;  /* stack image above text */
+    align-items: center;     /* center content */
+    gap: 10px;               /* reduce spacing on mobile */
+  }
+
+  .profile-pic {
+    order: -1;                /* move image above the text */
+  }
+
+  .subtitle {
+    margin-bottom: 0rem;
   }
 }

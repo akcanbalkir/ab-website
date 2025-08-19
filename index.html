@@ -8,12 +8,18 @@
 </head>
 <body>
     <main>
-        <!-- <img src="https://haas.berkeley.edu/wp-content/uploads/balkir_photo1_2025-Akcan-S-Balkir-1-768x1024.jpg" alt="Akcan Balkir" class="profile-pic" /> -->
-        <h1 class="title" data-animate-first>Akcan Balkir</h1>
-        <p class="subtitle" data-animate-first>University of California, Berkeley Economics</p>
+        <div class="header-container">
+            <div class="text-container">
+                <h1 class="title" data-animate-first>Akcan Balkir</h1>
+                <p class="subtitle" data-animate-first>University of California, Berkeley Economics</p>
+            </div>
+            <img src="photos/balkir_photo1_2025.jpg" alt="Akcan Balkir" class="profile-pic">
+        </div>
+
 
         <p class="intro" data-animate>I am a Ph.D. candiate in the economics department at the University of California, Berkeley. My research focus is in public finance, labor economics, and environmental economics.</p>
         <nav class="links" data-animate>
+            <a href="https://www.dropbox.com/scl/fi/bjppvfyqquqyez0c7my5h/cv.pdf?rlkey=jfn897eeuns2b5nnfdiv9216h&st=caxy4c3o&dl=0" target="_blank" rel="noopener noreferrer">CV</a>
             <a href="mailto:akcan.balkir@berkeley.edu">Email</a>
         </nav>
 
@@ -28,18 +34,18 @@
     </main>
 
     <script>
-        // Simple fade-in animation on page load with stagger
+        // Staggered Fade-in animation on page load
         window.addEventListener('DOMContentLoaded', () => {
             const firstGroup = document.querySelectorAll('[data-animate-first]');
             const restGroup = document.querySelectorAll('[data-animate]:not([data-animate-first])');
 
-            // Fade in first group immediately (or with small stagger)
+            // Fade in first group 
             firstGroup.forEach((el, i) => {
                 el.style.animationDelay = `${i * 300}ms`;
                 el.classList.add('fade-in');
             });
 
-            // Fade in rest after a short delay (e.g., after first group finishes)
+            // Fade in rest after a short delay
             const delayOffset = firstGroup.length * 300 + 200; // 200ms gap after first group
             restGroup.forEach((el, i) => {
                 el.style.animationDelay = `${delayOffset}ms`;
@@ -49,53 +55,3 @@
     </script>
 </body>
 </html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Test Site</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-    <main>
-        <h1 class="title" data-animate-first>Test Name</h1>
-        <p class="subtitle" data-animate-first>Test Position</p>
-
-        <p class="intro" data-animate>Test Description.</p>
-        <nav class="links" data-animate>
-            <a href="mailto:test_email@test.com">Email</a>
-        </nav>
-
-        <section class="research" data-animate>
-            <h2>Research</h2>
-            <div>
-                <p><a href="papers/tbd.pdf" target="_blank" rel="noopener noreferrer">Test Paper 1</p>
-                <p><a href="papers/test.pdf" target="_blank" rel="noopener noreferrer">Test paper 2</p>
-            </div>
-        </section>
-    </main>
-
-    <script>
-        // Simple fade-in animation on page load with stagger
-        window.addEventListener('DOMContentLoaded', () => {
-            const firstGroup = document.querySelectorAll('[data-animate-first]');
-            const restGroup = document.querySelectorAll('[data-animate]:not([data-animate-first])');
-
-            // Fade in first group immediately (or with small stagger)
-            firstGroup.forEach((el, i) => {
-                el.style.animationDelay = `${i * 300}ms`;
-                el.classList.add('fade-in');
-            });
-
-            // Fade in rest after a short delay (e.g., after first group finishes)
-            const delayOffset = firstGroup.length * 300 + 200; // 200ms gap after first group
-            restGroup.forEach((el, i) => {
-                el.style.animationDelay = `${delayOffset}ms`;
-                el.classList.add('fade-in');
-            });
-        });
-    </script>
-</body>
-</html> -->
