@@ -104,6 +104,16 @@ main {
   text-decoration: underline;
 }
 
+/* Paper entries: title and coauthors on one line, status below */
+.research .paper {
+  margin-bottom: 1.25rem;
+}
+
+.research .status {
+  display: block;
+  color: var(--color-text-secondary);
+}
+
 .links {
   display: flex;
   gap: 20px;
